@@ -1,0 +1,237 @@
+.smjestaj-container {
+    margin-top: 90px !important;
+    padding: 6rem 2rem;
+    background-color: var(--accent);
+    color: var(--foreground);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Title */
+  .smjestaj-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  /* Description */
+  .smjestaj-description {
+    font-size: 1.25rem;
+    color: var(--foreground);
+    line-height: 1.8;
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+  
+  /* Feature Boxes - Flexbox for layout */
+  .feature-boxes {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 3rem;
+  }
+  
+  /* Individual Feature Box */
+  .feature-box {
+    background-color: var(--background);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    flex: 1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-width: 250px;
+    opacity: 0;
+    transform: translateX(100px); /* Start from right */
+    animation: slideIn 2s ease-out forwards; /* Slower animation */
+    animation-delay: 0.5s;
+  }
+  
+  /* Alternating Slide-In for Feature Boxes */
+  .feature-box:nth-of-type(odd) {
+    animation-name: slideInLeft; /* Slide from left */
+  }
+  
+  .feature-box:nth-of-type(even) {
+    animation-name: slideInRight; /* Slide from right */
+  }
+  
+  /* Slide-In Animation from Left */
+  @keyframes slideInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-100px); /* Start from left */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slide-In Animation from Right */
+  @keyframes slideInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(100px); /* Start from right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slower Animation Timing */
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateX(100px); /* Start off-screen from right */
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  /* Slower Animation Duration */
+  .feature-box {
+    animation-duration: 2s; /* Slower transition */
+    animation-timing-function: ease-out;
+  }
+  
+  /* Hover Effect for Feature Boxes */
+  .feature-box:hover {
+    transform: translateY(-10px) scale(1.05); /* Slight magnification */
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Villa Description */
+  .villa-description {
+    margin-bottom: 4rem;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Pricing Section Styles */
+  .pricing-section {
+    margin-bottom: 4rem;
+    text-align: center;
+  }
+  
+  .pricing-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 2rem;
+  }
+  
+  .pricing-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .pricing-option {
+    background-color: var(--background);
+    padding: 2rem;
+    border-radius: 1rem;
+    flex: 1;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .pricing-option h3 {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .pricing-option p {
+    font-size: 1.25rem;
+    color: var(--foreground);
+  }
+  
+  .price {
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--accent);
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    display: inline-block;
+    margin-top: 1rem;
+  }
+  
+  /* Hover Effects for Pricing Options */
+  .pricing-option:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.15);
+  }
+  
+  .price:hover {
+    transform: scale(1.1);
+    background-color: var(--primary);
+    color: #fff;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Call to Action Button */
+  .cta-container {
+    margin-top: 2rem;
+  }
+  
+  .cta-button {
+    padding: 1rem 2rem;
+    background-color: var(--primary);
+    color: white;
+    font-size: 1.25rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    background-color: var(--secondary);
+  }
+  
+  /* Gallery Section */
+  .gallery-container {
+    margin-bottom: 3rem;
+  }
+  
+  .gallery-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  
+  .gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .gallery img:hover {
+    transform: scale(1.05);
+  }

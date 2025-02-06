@@ -1,0 +1,101 @@
+.about-us-container {
+  background-color: var(--secondary);
+  padding: 4rem 2rem;
+  min-height: 100vh;
+  font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow-x: hidden;
+  padding-top: 80px; /* Ensure there's padding on top for the fixed navbar */
+}
+
+/* Main content box styling */
+.main-content-box {
+  background-color: #B0D0C7; /* Slightly darker shade */
+  padding: 3rem;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+/* Content section styling */
+.content-section {
+  background-color: #B0D0C7; /* Slightly darker shade */
+  padding: 3rem;
+  width: 100%;
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateX(100px);
+  animation: slideIn 1.5s ease-out forwards;
+}
+
+/* Animation for sliding in */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade-in effect on scroll */
+@keyframes fadeInOnScroll {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scroll-triggered animation */
+.scroll-trigger {
+  opacity: 0;
+  animation: fadeInOnScroll 1.5s ease-out forwards;
+}
+
+/* Media Queries for Scroll Animation Delay */
+@media screen and (min-width: 768px) {
+  .scroll-trigger {
+    animation-delay: 1s; /* Delay added for scroll-triggered fade-in */
+  }
+
+  /* Delaying each section's appearance progressively */
+  .content-section:nth-of-type(1) {
+    animation-delay: 0.5s;
+  }
+
+  .content-section:nth-of-type(2) {
+    animation-delay: 1s;
+  }
+
+  .content-section:nth-of-type(3) {
+    animation-delay: 1.5s;
+  }
+
+  .content-section:nth-of-type(4) {
+    animation-delay: 2s;
+  }
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .main-content-box {
+    padding: 2rem;
+  }
+
+  .content-section {
+    padding: 2rem;
+  }
+}
